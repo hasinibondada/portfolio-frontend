@@ -1,10 +1,10 @@
 const skillCategories = [
-  { title: 'Languages', skills: ['Python', 'Java', 'JavaScript', 'C'], icon: '⚡' },
-  { title: 'AI & Data Science', skills: ['Machine Learning', 'NLP', 'KNN', 'Pandas', 'NumPy', 'Jupyter'], icon: '🧠' },
+  { title: 'Languages', skills: ['Python', 'Java', 'C'], icon: '⚡' },
+  { title: 'AI & Data Science', skills: ['Machine Learning', 'NLP', 'KNN'], icon: '🧠' },
   { title: 'Frontend', skills: ['HTML', 'CSS', 'React.js'], icon: '🎨' },
-  { title: 'Backend', skills: ['Python', 'Node.js', 'Flask', 'Express.js'], icon: '⚙️' },
+  { title: 'Backend', skills: ['Python', 'Node.js', 'Flask'], icon: '⚙️' },
   { title: 'Database', skills: ['MySQL', 'MongoDB'], icon: '🗄️' },
-  { title: 'Tools & Platforms', skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'MongoDB Atlas'], icon: '🛠️' },
+  { title: 'Tools & Platforms', skills: ['Git', 'GitHub', 'VS Code', 'MongoDB Atlas'], icon: '🛠️' },
   { title: 'Concepts', skills: ['OOP', 'REST APIs', 'Cybersecurity Basics'], icon: '🔒' },
 ];
 
@@ -36,18 +36,11 @@ const certifications = [
   { name: 'Cloud Foundations', issuer: 'AWS Academy' },
   { name: 'MERN Full Stack', issuer: 'Unstop' },
   { name: 'Java with AI', issuer: 'Unstop' },
-  { name: 'Professional Networking for Career Growth', issuer: 'HP Foundation' },
-  { name: 'Prompt Engineering for Everyone', issuer: 'IBM Skills Network' },
-  { name: 'Communication Skills', issuer: 'IBM Skills Build' },
-  { name: 'AI For Beginners', issuer: 'HP Foundation' },
-  { name: 'Claude Code: The Coding Assistant', issuer: 'Analytics Vidya' },
-  { name: 'Gen AI for Everyone', issuer: 'Analytics Vidya' },
   { name: 'Essential SQL Skills for Data Beginners', issuer: 'Analytics Vidya' },
   { name: 'Smart Cities', issuer: 'NPTEL' },
-  { name: 'Crash Course: AWS Basics', issuer: 'KodeKloud' },
+  { name: 'Beginning Python', issuer: 'Infosys Springboard' },
   { name: 'Generative AI Foundations', issuer: 'Infosys Springboard' },
-  { name: 'Cybersecurity Analyst Job Simulation', issuer: 'Tata' },
-  { name: 'Data Analytics Job Simulation', issuer: 'Deloitte' },
+
 ];
 
 export default function About() {

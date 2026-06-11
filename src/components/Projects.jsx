@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { api } from '../api/client';
 
 const projectImages = {
   'AI-Airport-Digital-Twin-System': { emoji: '✈️', gradient: 'from-blue-600 to-cyan-600', label: 'Airport Digital Twin' },
@@ -21,6 +19,16 @@ const liveDemos = {
   'AI-Airport-Digital-Twin-System': 'https://ai-airport-digital-twin-system-d18n.onrender.com/',
   'KNN-Resume-job-matching': 'https://knn-resume-job-matching.onrender.com/',
 };
+
+const projectsData = [
+  { id: 1, name: 'AI-Airport-Digital-Twin-System', description: 'Developed a full-stack Airport Digital Twin platform that enables real-time monitoring of airport operations, including flights, terminals, and passenger flow. Integrated analytics dashboards and AI-based insights to improve operational efficiency and decision-making.', language: 'JavaScript', topics: ['Digital Twin', 'AI', 'Real-time'], stars: 0, url: 'https://github.com/hasinibondada/AI-Airport-Digital-Twin-System' },
+  { id: 2, name: 'vulnerability-scan-ui', description: 'Created a web-based vulnerability scanner that detects common website security issues and generates detailed security reports. The system provides risk classification and remediation recommendations to help improve web application security.', language: 'JavaScript', topics: ['Security', 'Scanner', 'Web'], stars: 0, url: 'https://github.com/hasinibondada/vulnerability-scan-ui' },
+  { id: 3, name: 'phishing-email-detection-', description: 'Built a machine learning-based phishing email detection system using NLP techniques. The application analyzes email content and identifies phishing threats with high accuracy, helping users improve email security.', language: 'Jupyter Notebook', topics: ['Machine Learning', 'NLP', 'Security'], stars: 0, url: 'https://github.com/hasinibondada/phishing-email-detection-' },
+  { id: 4, name: 'secureloginsystem', description: 'Developed a secure user authentication system with features such as user registration, login validation, password encryption, and session management. The application enhances account security by protecting user credentials and preventing unauthorized access.', language: 'HTML', topics: ['Authentication', 'Security'], stars: 0, url: 'https://github.com/hasinibondada/secureloginsystem' },
+  { id: 5, name: 'nutrivision', description: 'NutriVision is an AI-powered application that analyzes food items and provides nutritional information such as calories, proteins, carbohydrates, and fats. It helps users make informed dietary decisions and maintain a healthy lifestyle.', language: 'Jupyter Notebook', topics: ['AI', 'Nutrition', 'Health'], stars: 0, url: 'https://github.com/hasinibondada/nutrivision' },
+  { id: 6, name: 'password-strength-analyzer', description: 'Built a password strength analysis tool that evaluates passwords based on length, complexity, and character diversity. The system provides real-time feedback and security recommendations to help users create stronger passwords.', language: 'Jupyter Notebook', topics: ['Security', 'Password', 'Tool'], stars: 0, url: 'https://github.com/hasinibondada/password-strength-analyzer' },
+  { id: 7, name: 'KNN-Resume-job-matching', description: 'Developed a machine learning-based Resume Job Matching System using the K-Nearest Neighbors (KNN) algorithm to match candidate resumes with suitable job roles. The system analyzes skills, qualifications, and keywords to recommend the most relevant job opportunities.', language: 'Jupyter Notebook', topics: ['Machine Learning', 'KNN', 'Resume'], stars: 0, url: 'https://github.com/hasinibondada/KNN-Resume-job-matching' },
+];
 
 function ProjectThumbnail({ name }) {
   const info = projectImages[name] || { emoji: '📁', gradient: 'from-gray-600 to-slate-600', label: '' };
@@ -53,31 +61,6 @@ function ProjectThumbnail({ name }) {
 }
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const projectOrder = [
-    'AI-Airport-Digital-Twin-System',
-    'vulnerability-scan-ui',
-    'phishing-email-detection-',
-    'secureloginsystem',
-    'nutrivision',
-    'password-strength-analyzer',
-    'KNN-Resume-job-matching',
-  ];
-
-  useEffect(() => {
-    api.projects.list()
-      .then((data) => {
-        const sorted = [...data].sort(
-          (a, b) => projectOrder.indexOf(a.name) - projectOrder.indexOf(b.name)
-        );
-        setProjects(sorted);
-      })
-      .catch(() => setProjects([]))
-      .finally(() => setLoading(false));
-  }, []);
-
   return (
     <section id="projects" className="relative max-w-6xl mx-auto px-4 pt-8 pb-20">
       <div className="text-center mb-12">
@@ -86,19 +69,8 @@ export default function Projects() {
         </h2>
         <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full" />
       </div>
-      {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="h-72 rounded-xl bg-gray-900/50 animate-pulse" />
-          ))}
-        </div>
-      ) : projects.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-gray-500">No projects to display yet.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, idx) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projectsData.map((project, idx) => {
             const tech = [project.language, ...(project.topics || [])].filter(Boolean);
             const demo = liveDemos[project.name];
             return (
@@ -160,7 +132,6 @@ export default function Projects() {
             );
           })}
         </div>
-      )}
     </section>
   );
 }
