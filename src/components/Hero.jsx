@@ -40,7 +40,7 @@ export default function Hero() {
             GitHub
           </a>
           <span className="text-gray-700 hidden sm:inline">|</span>
-          <a href="https://leetcode.com/hasinibondada25/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+          <a href="https://leetcode.com/u/hasinibondada25/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors flex items-center gap-1.5">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 1.898L8.912 9.09a2.228 2.228 0 0 0 0 3.153l7.19 7.19a2.228 2.228 0 0 0 3.153 0l7.19-7.19a2.228 2.228 0 0 0 0-3.152l-7.19-7.19a2.228 2.228 0 0 0-3.153 0zm-7.19 10.336l-4.186 4.186a2.228 2.228 0 0 0 0 3.152l7.19 7.19a2.228 2.228 0 0 0 3.152 0l4.187-4.186-10.343-10.342z" /></svg>
             LeetCode
           </a>
