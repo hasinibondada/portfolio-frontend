@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <AuthProvider>
           <App />
         </AuthProvider>
-      </BrowserRouter>
+        </HashRouter>
     </HelmetProvider>
   </React.StrictMode>
 );
