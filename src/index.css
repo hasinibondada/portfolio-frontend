@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  ::selection {
+    @apply bg-blue-500/30;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .prose-custom {
+    @apply max-w-none text-gray-300 leading-relaxed;
+  }
+
+  .prose-custom h1 { @apply text-3xl font-bold mt-8 mb-4 text-white; }
+  .prose-custom h2 { @apply text-2xl font-bold mt-6 mb-3 text-white; }
+  .prose-custom h3 { @apply text-xl font-semibold mt-5 mb-2 text-white; }
+  .prose-custom h4 { @apply text-lg font-semibold mt-4 mb-2 text-gray-100; }
+  .prose-custom p { @apply mb-4 leading-8; }
+  .prose-custom a { @apply text-blue-400 hover:text-blue-300 underline; }
+  .prose-custom ul { @apply list-disc pl-6 mb-4 space-y-1; }
+  .prose-custom ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+  .prose-custom li { @apply leading-7; }
+  .prose-custom blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-400 my-4;
+  }
+  .prose-custom pre {
+    @apply bg-gray-900 rounded-lg p-4 overflow-x-auto mb-4 border border-gray-800;
+  }
+  .prose-custom code {
+    @apply font-mono text-sm;
+  }
+  .prose-custom :not(pre) > code {
+    @apply bg-gray-800 px-1.5 py-0.5 rounded text-blue-300;
+  }
+  .prose-custom table {
+    @apply w-full border-collapse mb-4;
+  }
+  .prose-custom th {
+    @apply border border-gray-700 bg-gray-800 px-3 py-2 text-left text-white font-semibold;
+  }
+  .prose-custom td {
+    @apply border border-gray-700 px-3 py-2;
+  }
+  .prose-custom img {
+    @apply rounded-lg max-w-full my-4;
+  }
+  .prose-custom hr {
+    @apply border-gray-700 my-8;
+  }
+  .prose-custom input[type="checkbox"] {
+    @apply mr-2 accent-blue-500;
+  }
+}
+
+.markdown-editor {
+  @apply w-full h-full bg-gray-900 text-gray-100 font-mono text-sm p-4 border-0 outline-none resize-none;
+}
+
+.markdown-preview {
+  @apply p-4 overflow-y-auto;
+}
+
+.gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-card {
+  @apply bg-gray-900/40 backdrop-blur-xl border border-gray-800/50 rounded-xl;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
