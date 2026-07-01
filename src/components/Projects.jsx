@@ -1,5 +1,75 @@
 import { Helmet } from 'react-helmet-async';
 
+const ProjectIcon = ({ name, className = "w-10 h-10" }) => {
+  const icons = {
+    'AI-Airport-Digital-Twin-System': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M24 4L6 16v16l18 12 18-12V16L24 4z" />
+        <circle cx="24" cy="24" r="6" />
+        <path d="M24 10v4M24 34v4M14 18l3 3M31 27l3 3M14 30l3-3M31 21l3-3" />
+        <path d="M10 24h4M34 24h4" strokeWidth="1.5" />
+      </svg>
+    ),
+    'vulnerability-scan-ui': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M24 6L6 16v16l18 12 18-12V16L24 6z" />
+        <path d="M18 20l6 6 6-6" />
+        <path d="M24 26v6" />
+        <circle cx="24" cy="18" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+    'nutrivision': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="24" cy="24" r="18" />
+        <path d="M24 12v8" />
+        <path d="M24 28v8" />
+        <path d="M16 24h8" />
+        <path d="M18 18l4 4M30 30l-4-4M30 18l-4 4M18 30l4-4" />
+      </svg>
+    ),
+    'phishing-email-detection-': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M40 16L24 28 8 16" />
+        <rect x="6" y="10" width="36" height="28" rx="3" />
+        <path d="M6 16l18 12 18-12" />
+        <circle cx="24" cy="32" r="2" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+    'KNN-Resume-job-matching': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="8" y="6" width="32" height="36" rx="3" />
+        <path d="M16 14h16M16 20h12M16 26h14" />
+        <circle cx="26" cy="36" r="4" />
+        <circle cx="36" cy="30" r="4" />
+        <circle cx="36" cy="40" r="3" />
+        <path d="M29 33l3-1" strokeWidth="1.5" />
+      </svg>
+    ),
+    'password-strength-analyzer': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="10" y="18" width="28" height="24" rx="3" />
+        <path d="M16 18V14a8 8 0 0116 0v4" />
+        <circle cx="24" cy="30" r="3" fill="currentColor" stroke="none" />
+        <path d="M24 30v4" />
+      </svg>
+    ),
+    'secureloginsystem': (
+      <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="12" y="20" width="24" height="22" rx="3" />
+        <path d="M18 20V14a6 6 0 0112 0v6" />
+        <circle cx="24" cy="32" r="2.5" fill="currentColor" stroke="none" />
+        <path d="M24 32v3" />
+      </svg>
+    ),
+  };
+  return icons[name] || (
+    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="8" y="8" width="32" height="32" rx="4" />
+      <path d="M16 24h16M24 16v16" />
+    </svg>
+  );
+};
+
 const projectImages = {
   'AI-Airport-Digital-Twin-System': { emoji: '✈️', gradient: 'from-blue-600 to-cyan-600', label: 'Airport Digital Twin' },
   'vulnerability-scan-ui': { emoji: '🔍', gradient: 'from-red-600 to-orange-600', label: 'Security Scanner' },
@@ -47,8 +117,8 @@ function ProjectThumbnail({ name }) {
       <div className={`absolute inset-0 bg-gradient-to-br ${info.gradient} opacity-90`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
-      <span className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl transform group-hover/thumb:scale-110 transition-all duration-500 drop-shadow-2xl">
-        {info.emoji}
+      <span className="absolute inset-0 flex items-center justify-center text-white/80 transform group-hover/thumb:scale-110 transition-all duration-500">
+        <ProjectIcon name={name} className="w-14 h-14 md:w-16 md:h-16" />
       </span>
       <span className="absolute bottom-3 left-3 text-xs font-semibold text-white/90 bg-black/40 px-3 py-1.5 rounded-md backdrop-blur-sm tracking-wide uppercase">
         {info.label}

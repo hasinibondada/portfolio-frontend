@@ -45,7 +45,7 @@ const certifications = [
 
 export default function About() {
   return (
-    <section id="about" className="relative max-w-6xl mx-auto px-4 py-20">
+    <section id="about" className="relative max-w-6xl mx-auto px-4 pb-20 pt-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
           About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Me</span>

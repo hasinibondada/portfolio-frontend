@@ -1,22 +1,22 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-[60vh] flex items-center justify-center px-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="gradient-orb w-96 h-96 bg-blue-500/10 top-20 -left-20 animate-float" />
         <div className="gradient-orb w-80 h-80 bg-purple-500/10 bottom-20 -right-20 animate-float" style={{ animationDelay: '-3s' }} />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-in">
-        <div className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4 backdrop-blur-sm">
           Aspiring Software Engineer &middot; Full Stack Developer &middot; AI/ML Enthusiast
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
           Hi, I'm{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
             Hasini Bondada
           </span>
         </h1>
-        <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6 rounded-full" />
-        <p className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-4 rounded-full" />
+        <p className="text-base md:text-lg text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed">
           Aspiring Software Engineer skilled in <span className="text-blue-400 font-medium">Java</span>,{' '}
           <span className="text-blue-400 font-medium">Python</span>,{' '}
           <span className="text-blue-400 font-medium">Full Stack Development</span>, and{' '}
@@ -24,7 +24,7 @@ export default function Hero() {
           Passionate about building AI-driven solutions and scalable web applications.
         </p>
 
-        <div className="flex items-center justify-center gap-3 flex-wrap text-sm text-gray-400 mb-4">
+        <div className="flex items-center justify-center gap-3 flex-wrap text-sm text-gray-400 mb-2">
           <a href="mailto:hasinibondada25@gmail.com" className="hover:text-blue-400 transition-colors flex items-center gap-1.5">
             <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             hasinibondada25@gmail.com
@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
 
-        <div className="flex items-center justify-center gap-3 flex-wrap mt-6">
+        <div className="flex items-center justify-center gap-3 flex-wrap mt-4">
           <a href="/resume.pdf" download className="px-5 py-2.5 border border-gray-700 hover:border-blue-500/50 text-gray-300 hover:text-white rounded-lg font-medium transition-all text-sm flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
             Resume
